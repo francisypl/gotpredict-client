@@ -1,4 +1,5 @@
 import * as routes from "./routes";
 import * as cookies from "./cookies";
+import * as images from "./images";
 
-export { routes, cookies };
+export { routes, cookies, images };

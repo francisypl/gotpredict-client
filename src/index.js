@@ -6,7 +6,7 @@ import { routes } from "./constants";
 import Register from "./containers/Register";
 import Questions from "./containers/Questions";
 
-import "./styles.css";
+import "./styles.scss";
 
 function App() {
   return (

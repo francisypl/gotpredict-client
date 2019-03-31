@@ -2,26 +2,22 @@ import React, { useState } from "react";
 import { useImmerReducer as useReducer } from "use-immer";
 
 import appReducer, { initialState } from "../reducers/app";
-import { Input, Choices, Button } from "../components";
+import { Input, Choices, Button, Image } from "../components";
 import * as actions from "../actions";
-import { routes } from "../constants";
+import { routes, images } from "../constants";
 
 const HOUSE_CHOICES = [
   {
     name: "stark",
-    icon: <div key="stark">Stark</div>
+    icon: <Image src={images.STARK_LOGO} whiteBg isIcon />
   },
   {
     name: "lanister",
-    icon: <div key="lanister">Lanister</div>
+    icon: <Image src={images.LAN_LOGO} whiteBg isIcon />
   },
   {
     name: "targariyan",
-    icon: <div key="targariyan">Targariyan</div>
-  },
-  {
-    name: "whitewalker",
-    icon: <div key="whitewalker">White Walker</div>
+    icon: <Image src={images.TAR_LOGO} whiteBg isIcon />
   }
 ];
 const HOUSE_NAMES = HOUSE_CHOICES.map(house => house.name);
@@ -39,14 +35,14 @@ function Register() {
       house
     });
   return (
-    <div>
+    <div className="register-container">
       <Input label="Name" placeholder="ex. John Doe" onChange={setName} />
       <Input
         label="Email"
         placeholder="ex. johndoe@gmail.com"
         onChange={setEmail}
       />
-      <Choices label="House" choices={HOUSE_NAMES} onClick={setHouse}>
+      <Choices label="House" choices={HOUSE_NAMES} onClick={setHouse} inline>
         {HOUSE_ICONS}
       </Choices>
       <Button to={routes.QUESTIONS} onClick={setUser}>

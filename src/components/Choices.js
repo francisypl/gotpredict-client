@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import cx from "classnames";
 
-import Label from "./Label";
+import Header from "./Header";
 
-export default function Choices({ label, choices, children, onClick }) {
+export default function Choices({ label, choices, children, onClick, inline }) {
+  const [selected, setSelected] = useState(-1);
+  const choose = index => {
+    setSelected(index);
+    return void onClick(choices[index]);
+  };
   return (
     <div className="el-choices">
-      <Label>{label}</Label>
-      {children &&
-        children.map((child, index) => (
-          <div
-            key={`chioce-${index}`}
-            className="el-choice"
-            onClick={() => onClick(choices[index])}
-          >
-            {child}
-          </div>
-        ))}
+      <Header header="h2">{label}</Header>
+      <div className={cx({ inline })}>
+        {children &&
+          children.map((child, index) => (
+            <div
+              key={`chioce-${index}`}
+              className={cx("el-choice", { selected: index === selected })}
+              onClick={choose.bind(this, index)}
+            >
+              {child}
+            </div>
+          ))}
+      </div>
     </div>
   );
 }
@@ -25,5 +33,6 @@ Choices.propTypes = {
   label: PropTypes.string,
   choices: PropTypes.arrayOf(PropTypes.string),
   children: PropTypes.array,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  inline: PropTypes.bool
 };

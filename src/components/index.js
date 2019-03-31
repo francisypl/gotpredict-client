@@ -3,3 +3,4 @@ export { default as Label } from "./Label";
 export { default as Choices } from "./Choices";
 export { default as Button } from "./Button";
 export { default as Header } from "./Header";
+export { default as Image } from "./Image";

@@ -1,0 +1,113 @@
+body {
+  margin: 0px;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  // background-color: grey;
+  background-image: url("https://i.imgur.com/JU7Dx3p.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App {
+  font: 14px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". form .";
+}
+
+.register-container {
+  grid-area: form;
+}
+
+.el-label {
+  display: block;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.el-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.el-input {
+  margin: 20px;
+  input {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    font: inherit;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-right: 8px;
+    color: #444;
+    outline: none;
+  }
+  .el-label {
+    text-align: left;
+    margin: 0 0 4px 0;
+    font-size: 0.8em;
+  }
+}
+
+.el-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.el-img {
+  .whiteBg {
+    background-color: white;
+  }
+  .blackBg {
+    background-color: black;
+  } 
+  img {
+    width: 100%;
+  }
+}
+
+.el-choices {
+  margin: 20px 0px;
+  h2 {
+    color: white;
+  }
+  .inline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .el-choice {
+      margin: 0px 15px;
+    }
+  }
+  .el-choice {
+    display: block;
+    cursor: pointer;
+    margin: 20px 0px;
+    &.selected {
+      border: solid 1px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-areas: "form";
+  }
+}
