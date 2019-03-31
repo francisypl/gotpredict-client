@@ -1,0 +1,4 @@
+export const CREATE_NEW_PROFILE = "CREATE_NEW_PROFILE";
+export const RESET = "RESET";
+export const GET_QUESTIONS_DATA = "GET_QUESTIONS_DATA";
+export const ANSWER_QUESTION = "ANSWER_QUESTION";

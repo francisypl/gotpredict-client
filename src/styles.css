@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.el-label {
+  font-weight: bolder;
+}
+
+.el-button a {
+  text-decoration: none;
+  color: inherit;
+}
